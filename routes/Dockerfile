@@ -5,7 +5,7 @@ RUN apt-get update
 ARG MAP
 ENV ENV_MAP=$MAP
 
-COPY data/${ENV_MAP} /data/${ENV_MAP}
+COPY ${ENV_MAP} /data/${ENV_MAP}
 
 RUN osrm-extract -p /opt/car.lua ${ENV_MAP}
 RUN osrm-partition ${ENV_MAP}
